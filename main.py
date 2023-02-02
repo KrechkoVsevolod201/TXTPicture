@@ -4,7 +4,7 @@ import cv2
 
 
 def bw_convert():
-    a = np.asarray(Image.open('Picture/Anime.jpg'), dtype='uint8')
+    a = np.asarray(Image.open('Picture/But.jpg'), dtype='uint8')
     b = np.array([[[0.2989, 0.587, 0.114]]])
     sums = np.round(np.sum(a * b, axis=2)).astype(np.uint8)
     k = np.repeat(sums, 3).reshape(a.shape)
@@ -27,6 +27,11 @@ def img_pix():
     pix, pix1, pix2 = obj[1, 1]
     width, height = img.size
     print(pix, width, height)
+    with open('AsistFiles\FileWay.txt', 'r') as my_file:
+        filename = my_file.read()
+        filename1 = str(filename)
+    my_file.close()
+    print(filename)
 
 
 def text_generator():
@@ -62,7 +67,24 @@ def text_generator():
     f.close()
 
 
-if __name__ == '__main__':
-    bw_convert()
-    img_pix()
+def gui_runner(filename):
+    a = np.asarray(Image.open(filename), dtype='uint8')
+    b = np.array([[[0.2989, 0.587, 0.114]]])
+    sums = np.round(np.sum(a * b, axis=2)).astype(np.uint8)
+    k = np.repeat(sums, 3).reshape(a.shape)
+    Image.fromarray(k).save('Picture/res.png')
+    img = cv2.imread("Picture/res.png")
+    pic = Image.open("Picture/res.png")
+    width, height = pic.size
+    width = width * 1.7
+    proportion = height / width
+    wi = int((1 / proportion) * 250)
+    hei = int(proportion * 250)
+    print(wi, hei, width, height)
+    res = cv2.resize(img, dsize=(wi, hei), interpolation=cv2.INTER_CUBIC)
+    Image.fromarray(res).save('Picture/res.png')
     text_generator()
+
+
+if __name__ == '__main__':
+    gui_runner()
