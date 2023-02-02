@@ -4,16 +4,15 @@ import cv2
 
 
 def bw_convert():
-    a = np.asarray(Image.open('Picture/2.jpg'), dtype='uint8')
+    a = np.asarray(Image.open('Picture/Anime.jpg'), dtype='uint8')
     b = np.array([[[0.2989, 0.587, 0.114]]])
     sums = np.round(np.sum(a * b, axis=2)).astype(np.uint8)
     k = np.repeat(sums, 3).reshape(a.shape)
     Image.fromarray(k).save('Picture/res.png')
-    #img = cv2.imread('your_image.jpg')
     img = cv2.imread("Picture/res.png")
     pic = Image.open("Picture/res.png")
     width, height = pic.size
-    width = width * 2
+    width = width * 1.7
     proportion = height / width
     wi = int((1 / proportion) * 250)
     hei = int(proportion * 250)
@@ -40,7 +39,6 @@ def text_generator():
         while j < height:
             while i < width:
                 pix, pix1, pix2 = obj[i, j]
-                print(pix)
                 if pix >= 0 | pix <= 31:
                     f.write('@')
                 elif pix >= 32 | pix <= 63:
@@ -60,7 +58,6 @@ def text_generator():
                 i = i + 1
             i = 1
             j = j + 1
-            print(2)
             f.write('\n')
     f.close()
 
