@@ -128,4 +128,4 @@ def gui_runner_2(filename):
 
 
 if __name__ == '__main__':
-    gui_runner_2('Picture/But.jpg')
+    gui_runner_2()
