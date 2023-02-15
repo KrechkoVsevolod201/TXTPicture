@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c271f537-b54a-497e-8882-19fdaaf06bec" name="Default Changelist" comment="req.txt">
+    <list default="true" id="c271f537-b54a-497e-8882-19fdaaf06bec" name="Default Changelist" comment="req.txt 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/File/readme.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Picture/res.png" beforeDir="false" afterPath="$PROJECT_DIR$/Picture/res.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +51,7 @@
       <recent name="D:\PycharmProjects\TXTPicture\Picture" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.gui">
+  <component name="RunManager" selected="Python.main">
     <configuration name="gui" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TXTPicture" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -115,8 +117,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.gui" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.gui" />
       </list>
     </recent_temporary>
   </component>
@@ -150,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676493418691</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="req.txt 2">
+      <created>1676493846815</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1676493846815</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,6 +178,7 @@
     <MESSAGE value="Примерная версия проги, гюи не работает, допилю попозже" />
     <MESSAGE value="Гюи работает" />
     <MESSAGE value="req.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="req.txt" />
+    <MESSAGE value="req.txt 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="req.txt 2" />
   </component>
 </project>

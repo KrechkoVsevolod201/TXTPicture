@@ -14,8 +14,8 @@ def bw_convert():
     width, height = pic.size
     width = width * 1.7
     proportion = height / width
-    wi = int((1 / proportion) * 250)
-    hei = int(proportion * 250)
+    wi = int((1 / proportion) * 150)
+    hei = int(proportion * 150)
     print(wi, hei, width, height)
     res = cv2.resize(img, dsize=(wi, hei), interpolation=cv2.INTER_CUBIC)
     Image.fromarray(res).save('Picture/res.png')
@@ -67,6 +67,28 @@ def text_generator():
     f.close()
 
 
+def text_generator_one_bit():
+    img = Image.open("Picture/res.png")
+    obj = img.load()
+    width, height = img.size
+    i = 1
+    j = 1
+    with open('File/readme.txt', 'w') as f:
+        while j < height:
+            while i < width:
+                pix, pix1, pix2 = obj[i, j]
+                if (pix >= 0) and pix <= 31:
+                    f.write('1 ')
+                elif (pix >= 32) and pix <= 255:
+                    f.write('0 ')
+                print(i)
+                i = i + 1
+            i = 1
+            j = j + 1
+            f.write('\n')
+    f.close()
+
+
 def gui_runner(filename):
     a = np.asarray(Image.open(filename), dtype='uint8')
     b = np.array([[[0.2989, 0.587, 0.114]]])
@@ -78,13 +100,32 @@ def gui_runner(filename):
     width, height = pic.size
     width = width * 1.7
     proportion = height / width
-    wi = int((1 / proportion) * 250)
-    hei = int(proportion * 250)
+    wi = int((1 / proportion) * 150)
+    hei = int(proportion * 150)
     print(wi, hei, width, height)
     res = cv2.resize(img, dsize=(wi, hei), interpolation=cv2.INTER_CUBIC)
     Image.fromarray(res).save('Picture/res.png')
     text_generator()
 
 
+def gui_runner_2(filename):
+    a = np.asarray(Image.open(filename), dtype='uint8')
+    b = np.array([[[0.2989, 0.587, 0.114]]])
+    sums = np.round(np.sum(a * b, axis=2)).astype(np.uint8)
+    k = np.repeat(sums, 3).reshape(a.shape)
+    Image.fromarray(k).save('Picture/res.png')
+    img = cv2.imread("Picture/res.png")
+    pic = Image.open("Picture/res.png")
+    width, height = pic.size
+    width = width * 1.7
+    proportion = height / width
+    wi = int((proportion) * 700)
+    hei = int(proportion * 700)
+    print(wi, hei, width, height)
+    res = cv2.resize(img, dsize=(wi, hei), interpolation=cv2.INTER_CUBIC)
+    Image.fromarray(res).save('Picture/res.png')
+    text_generator_one_bit()
+
+
 if __name__ == '__main__':
-    gui_runner()
+    gui_runner_2('Picture/But.jpg')
