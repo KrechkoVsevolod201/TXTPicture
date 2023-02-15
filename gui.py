@@ -16,5 +16,5 @@ while True:
     if event == sg.WIN_CLOSED or event == "Exit":
         break
     elif event == "Submit":
-        main.gui_runner(values["-IN-"])
+        main.gui_runner_2(values["-IN-"])
         print(values["-IN-"])

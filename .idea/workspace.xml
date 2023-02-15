@@ -48,7 +48,7 @@
       <recent name="D:\PycharmProjects\TXTPicture\Picture" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.gui">
     <configuration name="gui" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TXTPicture" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -114,8 +114,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.gui" />
+        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
